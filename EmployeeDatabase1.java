@@ -16,12 +16,12 @@ public class EmployeeDatabase
 
     private ArrayList<employee> employee;
 
-    /** Add an employee with the given username e to the end of the database.
+    /** This method adds an employee with the given username e to the end of the database.
      * If an employee with the username e is already in the database, just return.
      * http://tutorials.jenkov.com/java/arrays.html#removing-elements-from-an-array
      */
 
-      public static void addEmployee(String e);
+      public static void addEmployee(String e)
       boolean testemployee = true;
          for ( Employee i : employee )
           {
@@ -42,24 +42,26 @@ public class EmployeeDatabase
                 str e; if e is not in staff; list.add(e));
                 else return;*/
 
-      /** Add the given destination d to
-      * the wish list for employee e in the database. If employee e is not in the database
-      * throw a java.lang.IllegalArgumentException. If d is already in the wish list for
-      * employee e, just return. https://stackoverflow.com/questions/4404084/check-if-a-value-exists-in-arraylist
+      /** Add the given destination d to the wish list for employee e in the database.
+      * If employee e is not in the database throw a java.lang.IllegalArgumentException.
+      * If d is already in the wish list for employee e, just return.
+      * Reference:
+      * https://stackoverflow.com/questions/4404084/check-if-a-value-exists-in-arraylist
       */
-      public void addDestination(String e, String d);
+      public void addDestination(String e, String d) throws IllegalArgumentException
       boolean testemployee = true;
         for ( Employee i : employee )
-         {
+        {
             if ( i.getUsername().equals(e) )  //access indv employees this way
-               {
+            {
                testemployee = true;  //test boolean
                i.getWishlist().add(d);
-               }
+            }
             if ( i.getUsername().equals(e) )  //access indv employees this way
-             {
-                 testemployee = false;  //test boolean
-             }
+            {
+               testemployee = false;  //test boolean
+               throw new IllegalArgumentException();
+            }
             // If employee e is not in the database throw a java.lang.IllegalArgumentException
          }
 
@@ -68,21 +70,17 @@ public class EmployeeDatabase
       public boolean containsEmployee(String e);
         boolean testemployee = true;
          for ( Employee i : employee )
-
-    {
-        if (i.getUsername().equals(e))  //access indv employees this way
+         {
+         if (i.getUsername().equals(e))  //access indv employees this way
             {
             testemployee = true;  //test boolean
-                // add a print function here
+            return true;    // add a print function here
             }
 
-        if (testemployee = false)
-            {
-            testemployee = false;
-            }
-        }
+         return false;
+         }
 
-        /** 	Return true if and only if destination d appears in at
+        /** Return true if and only if destination d appears in at
          *least one employee's wish list in the database.
          */
         public boolean containsDestination(String d)
