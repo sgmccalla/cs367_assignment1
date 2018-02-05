@@ -155,6 +155,7 @@ public class EmployeeDatabase
                 {
                     testemployee = true;  //test boolean
                     list.remove(d);
+                    return true
                 }
                 // If employee e is not in the database return false
             }

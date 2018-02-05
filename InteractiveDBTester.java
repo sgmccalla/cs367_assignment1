@@ -1,6 +1,7 @@
 
 import java.util.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class InteractiveDBTester {
 
@@ -9,21 +10,61 @@ public class InteractiveDBTester {
         // It is protected so that subclasses representing particular testers can
         // access it
 
+
 	protected static EmployeeDatabase EmployeeDB = new EmployeeDatabase();
 
         // Initialize DB from external data file
         protected static void populateDB(String [] args) {
 
     	// Step 1: check whether exactly one command-line argument is given
+        /* https://www.roseindia.net/java/beginners/java-read-file-line-by-line.shtml*/
 	   /* Code to implement Step 1 goes here  */
+	   File file = new File(fileName);     // create a File object
+	   try
+        {
+            DataInputStream in = new DataInputStream
+        }
 
     	// Step 2: check whether the input file exists and is readable
 	   /* Code to implement Step 2 goes here  */
+       if (file.exists())
+        {
+
+        try
+        {
+            // Open file
+            FileInputStream fstream = new FileInputStream();
+            DataInputStream in = new DataInputStream(fstream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine
+        }
 
     	// Step 3: load the data from the input file and use it to construct a
     	//         Employee database
+        while (employeeScanner.hasNext())
+        {
+            oneLine = employeeScanner.nextLine().trim;
+            employeeName = oneLine.split(",", 2);
+            employeeDest = destinationList[0].trim();
+            ArrayList<String> splitList = new ArrayList<String>
 
-	   /* Code to implement Step 3 goes here  */
+           // Create a single shared Scanner for keyboard input
+            Scanner employeeScanner = new Scanner(employeeFile)
+            String line = "";
+            String [] employeeList = new String[2];
+            String employeeName = "";
+            String destinationName = "";
+
+
+
+/*        while ((strLine = br.readLine()) != null)
+        {
+
+        }*/
+
+
+
+            /* Code to implement Step 3 goes here  */
        }
 
      static boolean GUIactive;  //is GUI tester active?
