@@ -92,12 +92,7 @@ public class EmployeeDatabase
                 if (i.getUsername().equals(e))  //access indv employees this way
                 {
                     testemployee = true;  //test boolean
-                    // add a print function here
-                }
-
-                if (testemployee = false)
-                {
-                    testemployee = false;
+                    return true;         // add a print function here
                 }
         }
 
@@ -129,64 +124,61 @@ public class EmployeeDatabase
             }
         }
 
-/** Return the wish list for the employee e. If an employee e is not in the database, return null.
- */
-public List<String> getDestinations(String e)
-{
-
+    /** Return the wish list for the employee e. If an employee e is not in the database, return null.
+    */
+    public List<String> getDestinations(String e)
+    {
         int pos = list.indexOf(e);
-
         System.out.println(e)
-
         else return null
+    }
 
-
-}
-
-/** Return an Iterator over the Employee objects in the database. The employees should be
- * returned in the order they were added to the database (resulting from the order in which
- * they are in the text file). https://stackoverflow.com/questions/37910401/how-to-return-an-arraylist-iterator-java
- */
+    /** Return an Iterator over the Employee objects in the database. The employees should be
+    * returned in the order they were added to the database (resulting from the order in which
+    * they are in the text file). https://stackoverflow.com/questions/37910401/how-to-return-an-arraylist-iterator-java
+    */
     public Iterator<Employee> iterator()
     {
         return employee.iterattor();
 
     }
 
-    /** 	Remove employee e from the database. If employee e is not in the database, return false;
-     * otherwise (i.e., the removal is successful) return true.
-     */
+    /** Remove employee e from the database. If employee e is not in the database, return false;
+    * otherwise (i.e., the removal is successful) return true.
+    */
     public boolean removeEmployee(String e)
-            boolean testemployee = true;
-            for ( Employee i : employee )
+    boolean testemployee = true;
+    {
+        for ( Employee i : employee )
             {
                 if ( i.getUsername().equals(e) )  //access indv employees this way
                 {
                     testemployee = true;  //test boolean
                     list.remove(d);
                 }
-
                 // If employee e is not in the database return false
-
             }
 
-/** Remove destination d from the database, i.e., remove destination d from every wish list
- * in which it appears. If destination d is not in the database, return false; otherwise
- * (i.e., the removal is successful) return true.
- */
-public boolean removeDestination(String d)
-{
-        list.remove(d);
+    /** Remove destination d from the database, i.e., remove destination d from every wish list
+     * in which it appears. If destination d is not in the database, return false; otherwise
+     * (i.e., the removal is successful) return true.
+     */
+    public boolean removeDestination(String d)
+    boolean testemployee = true;
+    {
+        for ( Employee i : employee )
+        {
+            if ( i.getUsername().equals(e) )  //access indv employees this way
+            {
+                list.remove(d);
+                return true
+            }
+    }
 
-
-}
-
-/** Return the number of employees in this database.
- */
-public int size()
-{
-
-
-
-}
+    /** Return the number of employees in this database.
+    */
+    public int size()
+    {
+        return employee.size()
+    }
 }
