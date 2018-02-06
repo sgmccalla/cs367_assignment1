@@ -42,14 +42,13 @@ public class InteractiveDBTester {
                    System.out.println("Error: Cannot access input file"); //print error
                    System.exit();
                }
-            try
-            {
+           else {
                 // Open file
                 FileInputStream fstream = new FileInputStream();
                 DataInputStream in = new DataInputStream(fstream);
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String strLine
-            }
+           }
 
     	// Step 3: load the data from the input file and use it to construct a
     	//         Employee database
@@ -63,21 +62,33 @@ public class InteractiveDBTester {
             DataInputStream in = new DataInputStream
         }
 
-
+       // Create a single shared Scanner for keyboard input
+       Scanner employeeScanner = new Scanner(employeeFile)
+       String line = "";
+       String [] employeeList = new String[2];
+       String employeeName = "";
+       String destinationName = "";
 
         while (employeeScanner.hasNext())
         {
-            oneLine = employeeScanner.nextLine().trim;
-            employeeName = oneLine.split(",", 2);
-            employeeDest = destinationList[0].trim();
-            ArrayList<String> splitList = new ArrayList<String>
+            oneLine = employeeScanner.nextLine().trim; //read in each line
+            employeeName = oneLine.split(",", 2); // put everything before the first comma in a new list
+            employeeDest = destinationList[0].trim(); // put everything after the first comma in a new list
+            ArrayList<String> splitList = new ArrayList<String> (Arrays.asList(destArray[1].split(",")));
+            String [] splitArray = new String [2];
+            ArrayList<Destinations> destinationList = new ArrayList<Destinations>();
+            Iterator<Destinations> iter = destinationList.iterator();
+            while (iter.hasNext()) {
+                Destinations current = iter.next();
+                if (current.getUsername().equals(e)) {
+                    return true;
+                }
+            }
+            return false;
 
-            // Create a single shared Scanner for keyboard input
-            Scanner employeeScanner = new Scanner(employeeFile)
-            String line = "";
-            String [] employeeList = new String[2];
-            String employeeName = "";
-            String destinationName = "";
+
+
+
 
 
 
