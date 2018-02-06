@@ -16,31 +16,51 @@ public class InteractiveDBTester {
         // Initialize DB from external data file
         protected static void populateDB(String [] args) {
 
-    	// Step 1: check whether exactly one command-line argument is given
-        /* https://www.roseindia.net/java/beginners/java-read-file-line-by-line.shtml*/
-	   /* Code to implement Step 1 goes here  */
-	   File file = new File(fileName);     // create a File object
-	   try
+            // Step 1: check whether exactly one command-line argument is given
+            /* https://www.roseindia.net/java/beginners/java-read-file-line-by-line.shtml*/
+            /* Code to implement Step 1 goes here  */
+            // first check to see if the program was run with the command line argument
+            // https://www.cs.swarthmore.edu/~newhall/unixhelp/Java_files.html
+            if(args.length < 1) {
+                System.out.println("Error, usage: java ClassName inputfile");
+                System.exit(1);
+            }
+            // https://stackoverflow.com/questions/16802147/java-i-want-to-read-a-file-name-from-command-line-then-use-a-bufferedreader-to
+            File inFile = null;
+            if (0 < args.length) {
+                inFile = new File(args[0]);
+            } else {
+                System.err.println("Invalid arguments count:" + args.length);
+                System.exit();
+            }
+
+            // Step 2: check whether the input file exists and is readable
+           /* Code to implement Step 2 goes here  */
+           if (file.exists()) {
+
+            try
+            {
+                // Open file
+                FileInputStream fstream = new FileInputStream();
+                DataInputStream in = new DataInputStream(fstream);
+                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                String strLine
+            }
+
+    	// Step 3: load the data from the input file and use it to construct a
+    	//         Employee database
+
+
+            /* Code to implement Step 3 goes here  */
+
+        File file = new File(fileName);     // create a File object
+        try
         {
             DataInputStream in = new DataInputStream
         }
 
-    	// Step 2: check whether the input file exists and is readable
-	   /* Code to implement Step 2 goes here  */
-       if (file.exists())
-        {
 
-        try
-        {
-            // Open file
-            FileInputStream fstream = new FileInputStream();
-            DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String strLine
-        }
 
-    	// Step 3: load the data from the input file and use it to construct a
-    	//         Employee database
         while (employeeScanner.hasNext())
         {
             oneLine = employeeScanner.nextLine().trim;
@@ -48,7 +68,7 @@ public class InteractiveDBTester {
             employeeDest = destinationList[0].trim();
             ArrayList<String> splitList = new ArrayList<String>
 
-           // Create a single shared Scanner for keyboard input
+            // Create a single shared Scanner for keyboard input
             Scanner employeeScanner = new Scanner(employeeFile)
             String line = "";
             String [] employeeList = new String[2];
@@ -57,15 +77,11 @@ public class InteractiveDBTester {
 
 
 
-/*        while ((strLine = br.readLine()) != null)
-        {
+        /*  while ((strLine = br.readLine()) != null) {
 
-        }*/
+             }*/
 
-
-
-            /* Code to implement Step 3 goes here  */
-       }
+            }
 
      static boolean GUIactive;  //is GUI tester active?
 
