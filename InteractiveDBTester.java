@@ -22,22 +22,26 @@ public class InteractiveDBTester {
             // first check to see if the program was run with the command line argument
             // https://www.cs.swarthmore.edu/~newhall/unixhelp/Java_files.html
             if(args.length < 1) {
-                System.out.println("Error, usage: java ClassName inputfile");
+                System.out.println("Please provide input file as command-line argument");
                 System.exit(1);
             }
             // https://stackoverflow.com/questions/16802147/java-i-want-to-read-a-file-name-from-command-line-then-use-a-bufferedreader-to
             File inFile = null;
             if (0 < args.length) {
                 inFile = new File(args[0]);
-            } else {
-                System.err.println("Invalid arguments count:" + args.length);
+            }
+            else {
+                System.err.println("Please provide input file as command-line argument");
                 System.exit();
             }
 
             // Step 2: check whether the input file exists and is readable
            /* Code to implement Step 2 goes here  */
-           if (file.exists()) {
-
+           if (!file.exists()) { //Checks whether the input file exists and is readable
+               {
+                   System.out.println("Error: Cannot access input file"); //print error
+                   System.exit();
+               }
             try
             {
                 // Open file
