@@ -147,15 +147,14 @@ public class EmployeeDatabase {
     public List<String> getDestinations(String e) {
         List<String> destList = new ArrayList<String>();
         Iterator<Employee> iter = items.iterator();
-            while(iter.hasNext()) {
-                Employee current=iter.next();
-                if (current.getUsername().equals(e)) {    // once you find the employee
-                    destList = current.getWishlist();	 // put their wish list into the list to be output
-                }
+        while(iter.hasNext()) {
+            Employee current=iter.next();
+            if (current.getUsername().equals(e)) {    // once you find the employee
+                destList = current.getWishlist();	 // put their wish list into the list to be output
             }
+        }
         return destList;
     }
-
 
     /** Return an Iterator over the Employee objects in the database. The employees should be
      * returned in the order they were added to the database (resulting from the order in which
@@ -163,7 +162,7 @@ public class EmployeeDatabase {
      * @param e
      * @return
      */
-    public Iterator<employee> iterator() {
+    public Iterator<Employee> iterator() {
         for(int i=items.size() - 2; i >= 0; i--) {
             items.add(items.remove(i));
         }
