@@ -46,10 +46,10 @@ public class InteractiveDBTester {
             }
 
             if (!datafile.exists()) { //Checks whether the input file exists and is readable
-               {
-                   System.out.println("Error: Cannot access input file"); //print error
-                   System.exit();
-               }
+                {
+                    System.out.println("Error: Cannot access input file"); //print error
+                    System.exit();
+                }
 /*            else {
                 // Open file
                 FileInputStream fstream = new FileInputStream();
@@ -57,12 +57,13 @@ public class InteractiveDBTester {
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String strLine
             }*/
+            }
 
             // Step 3: load the data from the input file and use it to construct a
             //         Employee database
                 /* Code to implement Step 3 goes here  */
             //create a list to load the data file to
-            EmployeeList employeeList = new EmployeeList
+/*            EmployeeList employeeList = new EmployeeList*/
 
 
             // Create a single shared Scanner for keyboard input
@@ -72,8 +73,7 @@ public class InteractiveDBTester {
             String destName = "";
             String destinationName = "";
 
-            while (employeeScanner.hasNext())
-            {
+            while (employeeScanner.hasNext()) {
                 oneLine = employeeScanner.nextLine().trim; //read in each line
                 employeeList = oneLine.split(",", 2); // put everything before the first comma in a new list
                 // put everything after the first comma in a new list
@@ -82,7 +82,7 @@ public class InteractiveDBTester {
                 ArrayList<String> splitList = new ArrayList<String>
                         (Arrays.asList(employeeName[1].split(",")));
                 // create new array to store the destinations
-                String [] splitArray = new String [2];
+                String[] splitArray = new String[2];
                 // store destinations in a new array
                 ArrayList<Destinations> wishlist = new ArrayList<Destinations>();
 
@@ -95,19 +95,16 @@ public class InteractiveDBTester {
                     }
                 }
                 return false;
+            }
 
             // create the database of employees and destinations
             Employee employee = new Employee(employeeName, wishlist);
+            EmployeeDB.add(employee);
 
             //close the scanner
-
-            //return the employee array
-            return
-
-            /*  while ((strLine = br.readLine()) != null) {
-
-                 }*/
-
+            employeeScanner.close();
+            //return the employee database
+            return EmployeeDB;
         }
 
      static boolean GUIactive;  //is GUI tester active?
