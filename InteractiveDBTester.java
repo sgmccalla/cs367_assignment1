@@ -66,17 +66,19 @@ public class InteractiveDBTester {
        Scanner employeeScanner = new Scanner(employeeFile)
        String line = "";
        String [] employeeList = new String[2];
-       String employeeName = "";
+       String destName = "";
        String destinationName = "";
 
         while (employeeScanner.hasNext())
         {
             oneLine = employeeScanner.nextLine().trim; //read in each line
-            employeeName = oneLine.split(",", 2); // put everything before the first comma in a new list
-            employeeDest = destinationList[0].trim(); // put everything after the first comma in a new list
-            ArrayList<String> splitList = new ArrayList<String> (Arrays.asList(destArray[1].split(",")));
+            employeeList = oneLine.split(",", 2); // put everything before the first comma in a new list
+            destName = destinationList[0].trim(); // put everything after the first comma in a new list
+            ArrayList<String> splitList = new ArrayList<String> (Arrays.asList(employeeList[1].split(",")));
             String [] splitArray = new String [2];
             ArrayList<Destinations> destinationList = new ArrayList<Destinations>();
+
+
             Iterator<Destinations> iter = destinationList.iterator();
             while (iter.hasNext()) {
                 Destinations current = iter.next();
@@ -86,17 +88,11 @@ public class InteractiveDBTester {
             }
             return false;
 
-
-
-
-
-
-
         /*  while ((strLine = br.readLine()) != null) {
 
              }*/
 
-            }
+        }
 
      static boolean GUIactive;  //is GUI tester active?
 
