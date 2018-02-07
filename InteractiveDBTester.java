@@ -126,10 +126,14 @@ public class InteractiveDBTester {
         Iterator<Destination> itr = destination.iterator();
         int match = 0;
         while(itr.hasNext()) {
-            if (itr.next()).removeDestination().equals()
+            if (itr.next()).removeDestination().equals(fileinput) { // WHAT IS THE CORRECT 'FILE INPUE' VALUE?
+                match++
+            }
         }
 
-
+        if (match == 0) {
+            System.out.println("destination not found")
+        }
     }
 
     protected static String pushSearch(String destination){
