@@ -55,31 +55,40 @@ public class InteractiveDBTester {
 
 
             /* Code to implement Step 3 goes here  */
-
-        File file = new File(fileName);     // create a File object
+               // create a File object from the user input
+        File file = new File(fileName);
         try
         {
             DataInputStream in = new DataInputStream
         }
 
-       // Create a single shared Scanner for keyboard input
-       Scanner employeeScanner = new Scanner(employeeFile)
-       String line = "";
-       String [] employeeList = new String[2];
-       String destName = "";
-       String destinationName = "";
+        //create a list to load the data file to
+        EmployeeList employeeList = new EmployeeList
+
+
+        // Create a single shared Scanner for keyboard input
+        Scanner employeeScanner = new Scanner(employeeFile)
+        String line = "";
+        String [] employeeName = new String[2];
+        String destName = "";
+        String destinationName = "";
 
         while (employeeScanner.hasNext())
         {
             oneLine = employeeScanner.nextLine().trim; //read in each line
             employeeList = oneLine.split(",", 2); // put everything before the first comma in a new list
-            destName = destinationList[0].trim(); // put everything after the first comma in a new list
-            ArrayList<String> splitList = new ArrayList<String> (Arrays.asList(employeeList[1].split(",")));
+            // put everything after the first comma in a new list
+            destName = destinationList[0].trim();
+            // split the destinations by each comma
+            ArrayList<String> splitList = new ArrayList<String>
+                    (Arrays.asList(employeeName[1].split(",")));
+            // create new array to store the destinations
             String [] splitArray = new String [2];
-            ArrayList<Destinations> destinationList = new ArrayList<Destinations>();
+            // store destinations in a new array
+            ArrayList<Destinations> wishlist = new ArrayList<Destinations>();
 
-
-            Iterator<Destinations> iter = destinationList.iterator();
+            // iterate over the array
+            Iterator<Destinations> iter = wishlist.iterator();
             while (iter.hasNext()) {
                 Destinations current = iter.next();
                 if (current.getUsername().equals(e)) {
@@ -87,6 +96,14 @@ public class InteractiveDBTester {
                 }
             }
             return false;
+
+        // create the database of employees and destinations
+        Employee employee = new Employee(employeeName, wishlist);
+
+        //close the scanner
+
+        //return the employee array
+        return
 
         /*  while ((strLine = br.readLine()) != null) {
 
