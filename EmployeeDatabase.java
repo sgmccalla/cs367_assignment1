@@ -20,17 +20,18 @@ public class EmployeeDatabase {
      * @param e
      */
     public static void addEmployee(String e) {
-        int k=0;
+        //int k=0;
         Iterator<Employee> iter = items.iterator();
         while(iter.hasNExt()) {
             Employee current=iter.next();
             if (current.getUsername().equalsIgnoreCase(e)) {
-                k=1;    // find employee in database
+                //k=1;    // find employee in database
                 return;
             }
-            if (k==0) { // if employee is not in database
-                items.add(new Employee(e));  // adds new employee line
+/*            if (k==0) { // if employee is not in database
+                items.add(new Employee(e));  // adds new employee line*/
             }
+        (items.add(new Employee(e)))  // adds new employee line LOOK BACK AT THIS LATER
         }
     }
 
@@ -44,7 +45,7 @@ public class EmployeeDatabase {
      */
     public void addDestination(String e, String d) throws IllegalArgumentException {
         int k = 0;
-        int kk = 0;
+/*        int kk = 0;*/
         Iterator<Employee> iter = items.iterator();
         while (iter.hasNext()) {
             Employee current = iter.next();
@@ -52,14 +53,15 @@ public class EmployeeDatabase {
                 k = 1;
                 Iterator<String> itr = current.getWishlist().iterator(); // find all instances of destination
                 while (itr.hasNext()) {
-                    String current2 = (String) itr.next();
+                    String current2 = itr.next();
                     if (current2.equalsIgnoreCase(d)) {
-                        kk = 1;
+                        kk = 1;     // LOOK AT THIS SOME MORE!
                         return; // return when destination found
                     }
-                    if (kk == 0) { // destination not in list
+                }
+//                    if (kk == 0) { // destination not in list
                         current.getWishlist().add(d);  // add to wishlist
-                    }
+
                 }
             }
             if (k==0) { // means employee was never found
@@ -76,7 +78,7 @@ public class EmployeeDatabase {
         Iterator<Employee> iter = items.iterator();
         while (iter.hasNext()) {
             Employee current = iter.next();
-            if (current.getUsername().equals(e)) {
+            if (current.getUsername().equalsIgnoreCase(e)) {
                 return true;
             }
         }
@@ -96,10 +98,6 @@ public class EmployeeDatabase {
                     return true;
                 }
 		}
-        return false;
-        if (k==0) { // means employee was never found DO I NEED THIS PART?
-            throw new IllegalArgumentException();
-        }
     }
 
     /****** Returns true if and only if destination d is in the
@@ -114,7 +112,7 @@ public class EmployeeDatabase {
         while(iter.hasNext()) {
             Employee current=iter.next();
             if (!current.getUsername().equals(e)){		// current iter = employee in question
-                if (current.getWishlist().contains(d)) {
+                if (current.getWishlist().contains(d)) { // need to make sure it's not case sensive
                     return true;
                 }
             }

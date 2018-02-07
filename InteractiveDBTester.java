@@ -21,10 +21,12 @@ public class InteractiveDBTester {
             /* Code to implement Step 1 goes here  */
             // first check to see if the program was run with the command line argument
             // https://www.cs.swarthmore.edu/~newhall/unixhelp/Java_files.html
-            if(args.length < 1) {
+            if(args.length == 1 ) {
                 System.out.println("Please provide input file as command-line argument");
                 System.exit(1);
             }
+
+            if
             // https://stackoverflow.com/questions/16802147/java-i-want-to-read-a-file-name-from-command-line-then-use-a-bufferedreader-to
             File inFile = null;
             if (0 < args.length) {
@@ -121,13 +123,22 @@ public class InteractiveDBTester {
        /* Code to implement discontinue command goes here:
           The supplied destination is removed from the wish lists
            of all employees in the employee database
+           If destination is not in the database,
+           return "destination not found". Otherwise,
+           discontinue destination (i.e., remove the destination
+           from all the wish lists in which it appears)
+           and return "destination discontinued".
+
        */
         //
-        Iterator<Destination> itr = destination.iterator();
+        Iterator<Destination> itr = EmployeeDB.iterator();
         int match = 0;
+
         while(itr.hasNext()) {
-            if (itr.next()).removeDestination().equals(fileinput) { // WHAT IS THE CORRECT 'FILE INPUE' VALUE?
+            if // compare to destination in question
+            if (itr.next()).removeDestination().equals(destination) { // WHAT IS THE CORRECT 'FILE INPUE' VALUE?
                 match++
+
             }
         }
 
@@ -141,6 +152,10 @@ public class InteractiveDBTester {
            Search the employee database for all employees who have
             the supplied destination in their wish list
        */
+
+
+
+
     }
 
     protected static String pushRemove(String employee){
@@ -152,6 +167,7 @@ public class InteractiveDBTester {
     protected static String pushInformation(){
        /* Code to implement information command goes here:
            Compute key information on the state of the employee database
+           keep appending on the stringn ---from Greg
        */
 
 
