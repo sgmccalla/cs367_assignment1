@@ -122,6 +122,14 @@ public class InteractiveDBTester {
           The supplied destination is removed from the wish lists
            of all employees in the employee database
        */
+        //
+        Iterator<Destination> itr = destination.iterator();
+        int match = 0;
+        while(itr.hasNext()) {
+            if (itr.next()).removeDestination().equals()
+        }
+
+
     }
 
     protected static String pushSearch(String destination){
@@ -141,6 +149,10 @@ public class InteractiveDBTester {
        /* Code to implement information command goes here:
            Compute key information on the state of the employee database
        */
+
+
+
+
     }
 
     protected static String pushList(){
