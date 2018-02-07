@@ -36,78 +36,77 @@ public class InteractiveDBTester {
             }
 
             // Step 2: check whether the input file exists and is readable
-           /* Code to implement Step 2 goes here  */
-           if (!file.exists()) { //Checks whether the input file exists and is readable
+            /* Code to implement Step 2 goes here  */
+
+            // create a File object from the user input
+            File datafile = new File(fileName);
+            try
+            {
+                DataInputStream in = new DataInputStream
+            }
+
+            if (!datafile.exists()) { //Checks whether the input file exists and is readable
                {
                    System.out.println("Error: Cannot access input file"); //print error
                    System.exit();
                }
-           else {
+/*            else {
                 // Open file
                 FileInputStream fstream = new FileInputStream();
                 DataInputStream in = new DataInputStream(fstream);
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String strLine
-           }
+            }*/
 
-    	// Step 3: load the data from the input file and use it to construct a
-    	//         Employee database
-
-
-            /* Code to implement Step 3 goes here  */
-               // create a File object from the user input
-        File file = new File(fileName);
-        try
-        {
-            DataInputStream in = new DataInputStream
-        }
-
-        //create a list to load the data file to
-        EmployeeList employeeList = new EmployeeList
+            // Step 3: load the data from the input file and use it to construct a
+            //         Employee database
+                /* Code to implement Step 3 goes here  */
+            //create a list to load the data file to
+            EmployeeList employeeList = new EmployeeList
 
 
-        // Create a single shared Scanner for keyboard input
-        Scanner employeeScanner = new Scanner(employeeFile)
-        String line = "";
-        String [] employeeName = new String[2];
-        String destName = "";
-        String destinationName = "";
+            // Create a single shared Scanner for keyboard input
+            Scanner employeeScanner = new Scanner(employeeFile)
+            String line = "";
+            String [] employeeName = new String[2];
+            String destName = "";
+            String destinationName = "";
 
-        while (employeeScanner.hasNext())
-        {
-            oneLine = employeeScanner.nextLine().trim; //read in each line
-            employeeList = oneLine.split(",", 2); // put everything before the first comma in a new list
-            // put everything after the first comma in a new list
-            destName = destinationList[0].trim();
-            // split the destinations by each comma
-            ArrayList<String> splitList = new ArrayList<String>
-                    (Arrays.asList(employeeName[1].split(",")));
-            // create new array to store the destinations
-            String [] splitArray = new String [2];
-            // store destinations in a new array
-            ArrayList<Destinations> wishlist = new ArrayList<Destinations>();
+            while (employeeScanner.hasNext())
+            {
+                oneLine = employeeScanner.nextLine().trim; //read in each line
+                employeeList = oneLine.split(",", 2); // put everything before the first comma in a new list
+                // put everything after the first comma in a new list
+                destName = destinationList[0].trim();
+                // split the destinations by each comma
+                ArrayList<String> splitList = new ArrayList<String>
+                        (Arrays.asList(employeeName[1].split(",")));
+                // create new array to store the destinations
+                String [] splitArray = new String [2];
+                // store destinations in a new array
+                ArrayList<Destinations> wishlist = new ArrayList<Destinations>();
 
-            // iterate over the array
-            Iterator<Destinations> iter = wishlist.iterator();
-            while (iter.hasNext()) {
-                Destinations current = iter.next();
-                if (current.getUsername().equals(e)) {
-                    return true;
+                // iterate over the array
+                Iterator<Destinations> iter = wishlist.iterator();
+                while (iter.hasNext()) {
+                    Destinations current = iter.next();
+                    if (current.getUsername().equals(e)) {
+                        return true;
+                    }
                 }
-            }
-            return false;
+                return false;
 
-        // create the database of employees and destinations
-        Employee employee = new Employee(employeeName, wishlist);
+            // create the database of employees and destinations
+            Employee employee = new Employee(employeeName, wishlist);
 
-        //close the scanner
+            //close the scanner
 
-        //return the employee array
-        return
+            //return the employee array
+            return
 
-        /*  while ((strLine = br.readLine()) != null) {
+            /*  while ((strLine = br.readLine()) != null) {
 
-             }*/
+                 }*/
 
         }
 
